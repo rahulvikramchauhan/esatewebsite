@@ -12,7 +12,7 @@ function SinglePage() {
         async function specificPost() {
             const data = await fetch(`http://localhost:8000/api/post/${id}`);
             const jsonData = await data.json();
-            setSinglePost(jsonData.data)
+            setSinglePost(jsonData.data[0])
         }
         specificPost();
     }, [])
