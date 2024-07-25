@@ -3,7 +3,7 @@ const Jwt = require("jsonwebtoken");
 const verifyToken = async function (req, res, next) {
     // conform token is their in cookies or not
     const token = req.cookies.token;
-
+    console.log(token);
     if (!token) {
         return res.status(400).send({
             message: "Not Authenticated"
