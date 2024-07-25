@@ -1,0 +1,111 @@
+@import "../backgroud.scss";
+
+button {
+  border: 2px solid rgb(222, 222, 222);
+
+  &:first-child {
+    border-top-left-radius: 5px;
+    border-right: none;
+    border-bottom: none;
+  }
+  &:nth-child(2) {
+    border-top-right-radius: 5px;
+    border-left: none;
+    border-bottom: none;
+  }
+  &.active {
+    transition: all 0.8s ease;
+    background-color: black;
+    color: white;
+  }
+}
+.form {
+  display: flex;
+  width: 95%;
+
+  align-items: flex-start;
+  justify-content: space-between;
+  border-width: 1px;
+  border-style: solid;
+  @include small {
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    gap: 5px;
+    // width: auto;
+  }
+
+  input {
+    &:focus {
+      outline: none;
+    }
+    &:first-child {
+      width: 25%;
+      height: 45px;
+      border-style: none;
+      @include medium {
+        width: 60%;
+      }
+      @include small {
+        width: 98.5%;
+        border-style: solid;
+        border-width: 1px;
+      }
+    }
+    &:nth-child(2) {
+      width: 25%;
+      height: 45px;
+      border-style: none;
+      @include medium {
+        width: 60%;
+      }
+      @include small {
+        border-style: solid;
+        border-width: 1px;
+        width: 98.5%;
+      }
+    }
+    &:nth-child(3) {
+      width: 25%;
+      height: 45px;
+      border-style: none;
+      @include medium {
+        width: 60%;
+      }
+      @include small {
+        border-style: solid;
+        border-width: 1px;
+        width: 98.5%;
+      }
+    }
+  }
+}
+.searchLogo {
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 47px;
+  cursor: pointer;
+  img {
+    width: 40%;
+    @include medium {
+      width: 20%;
+    }
+    @include small {
+      width: 5%;
+    }
+  }
+  @include medium {
+    width: 30%;
+  }
+  @include small {
+    width: 98.5%;
+  }
+}
+button {
+  background-color: #fff;
+  width: 65px;
+  height: 35px;
+}

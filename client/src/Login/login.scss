@@ -1,0 +1,65 @@
+@import "../backgroud.scss";
+.login {
+  display: flex;
+  height: 100%;
+  .formContainer {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    form {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      @include small {
+        width: 90%;
+      }
+      p {
+        font-size: small;
+        color: red;
+        margin: -25px 0px;
+        font-weight: 600;
+      }
+      input {
+        width: 100%;
+
+        display: flex;
+        padding: 0px 4px;
+
+        border-style: solid;
+        border: 1px solid #e0e0e0;
+        height: 30px;
+        border-radius: 5px;
+      }
+      button {
+        background-color: teal;
+        border: none;
+        width: 100%;
+
+        padding: 5px 10px;
+      }
+    }
+  }
+  .imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1.8;
+    position: relative;
+    background-color: rgb(251, 246, 232);
+    // padding-left: 20px;
+    img {
+      width: 115%;
+
+      position: absolute;
+      //   right: 0px;
+      @include large {
+        width: 105%;
+      }
+    }
+    @include medium {
+      display: none;
+    }
+  }
+}

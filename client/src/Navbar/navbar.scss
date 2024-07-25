@@ -1,0 +1,198 @@
+@import "../backgroud.scss";
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+
+  //   padding-top: 2%;
+  height: 60px;
+  .navProfile {
+    flex: 1.8;
+    .wrapper {
+      display: flex;
+      background-color: bisque;
+      justify-content: space-around;
+      align-items: center;
+      //
+      width: 100%;
+      height: 60px;
+      @include medium {
+        justify-content: space-between;
+        padding: 0px 20px;
+      }
+
+      @include small {
+        justify-content: center;
+        background-color: white;
+      }
+
+      .userInfo {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        position: relative;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        @include medium {
+          b {
+            display: none;
+          }
+        }
+        @include small {
+          b {
+            display: none;
+          }
+        }
+      }
+      .profileNotification {
+        position: relative;
+        @include small {
+          display: none;
+        }
+
+        .notification {
+          border-radius: 50%;
+          background-color: red;
+          width: max-content;
+          height: max-content;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: -4px;
+          right: -4px;
+        }
+        button {
+          border-radius: 5px;
+          cursor: pointer;
+          border: none;
+          background-color: #fece51;
+        }
+      }
+    }
+  }
+
+  a {
+    @include small {
+      display: none;
+    }
+  }
+
+  .left {
+    // background-color: orange;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    // justify-content: space-between;
+    gap: 50px;
+    height: 100%;
+    a {
+      font-size: smaller;
+      transition: all 1s ease;
+      &:hover {
+        scale: 1.2;
+      }
+    }
+    @include meduimLarge {
+      gap: 30px;
+    }
+    .logo {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+
+      gap: 5px;
+      &:hover {
+        scale: initial;
+      }
+      img {
+        width: 28px;
+        height: 28px;
+      }
+    }
+  }
+  .right {
+    background-color: rgb(251, 246, 232);
+    height: 100%;
+    flex: 1.8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    // padding-right: 20px;
+
+    @include medium {
+      background-color: transparent;
+    }
+  }
+
+  .signUp {
+    background-color: yellow;
+    padding: 12px 12px;
+    border-radius: 10px;
+    margin-right: 10%;
+    height: max-content;
+  }
+  .hamMenu {
+    display: none;
+    @include small {
+      display: flex;
+      z-index: 999;
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+    }
+  }
+  .WebName {
+    @include medium {
+      display: none;
+    }
+    @include small {
+      display: block;
+    }
+  }
+  .hamSideMenu {
+    display: none;
+    @include small {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10%;
+
+      color: white;
+      width: 40%;
+
+      position: absolute;
+      right: -40%;
+      transition: all 1s ease;
+      top: 0px;
+      background-color: black;
+      flex: 1;
+      height: 100vh;
+      &.visible {
+        right: 0px;
+      }
+      .signInSignOut {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-between;
+      }
+      a {
+        display: initial;
+        transition: all 0.8s ease;
+        &:hover {
+          scale: 1.2;
+        }
+      }
+    }
+  }
+}

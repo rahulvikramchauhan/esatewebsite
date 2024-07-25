@@ -1,0 +1,78 @@
+@import "../backgroud.scss";
+.newPostPage {
+  display: flex;
+  height: 100%;
+  .postTextContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+
+    gap: 30px;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+    .desc {
+      width: 90%;
+      height: 300px;
+      .quill {
+        .ql-editor {
+          height: 200px;
+        }
+      }
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      //   justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      width: 100%;
+      @include small {
+        flex-direction: column;
+        align-items: initial;
+      }
+      div {
+        width: 200px;
+        // height: 120%;
+        @include small {
+          width: 90%;
+        }
+        select {
+          width: 100%;
+          height: 50px;
+        }
+        input {
+          width: 100%;
+          height: 50px;
+        }
+      }
+    }
+
+    button {
+      margin: 0px auto;
+      width: 200px;
+      padding: 10px 30px;
+    }
+  }
+  .postImageContainer {
+    flex: 1.8;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(251, 246, 232);
+    div {
+      padding-left: 20px;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    .cloudinary-button {
+      width: 85px;
+      padding: 0px;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import "../backgroud.scss";
+.List {
+  display: flex;
+  height: 100%;
+  @include small {
+    flex-direction: column;
+    // height: 100%;
+    overflow-y: scroll;
+    gap: 20px;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .listContainer {
+    flex: 3;
+    gap: 20px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include small {
+      flex: none;
+      // height: 100%;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      h1 {
+        font-weight: lighter;
+        font-size: x-large;
+      }
+      h2 {
+        font-size: x-large;
+      }
+    }
+  }
+  .mapContainer {
+    flex: 1.8;
+    background-color: rgb(251, 246, 232);
+    height: 100%;
+    @include small {
+      flex: none;
+
+      height: 100%;
+    }
+  }
+  .listCard {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: space-around;
+    margin-top: 30px;
+    gap: 50px;
+  }
+}

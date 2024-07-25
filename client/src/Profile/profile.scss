@@ -1,0 +1,185 @@
+@import "../backgroud.scss";
+.profile {
+  display: flex;
+  height: 100%;
+  @include small {
+    flex-direction: column;
+
+    gap: 20px;
+    height: 100%;
+    overflow-y: scroll;
+  }
+  .userContainer {
+    flex: 3;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include small {
+      flex: none;
+    }
+
+    .wrapper {
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .update {
+          width: max-content;
+          background-color: #fece51;
+          padding: 0px 5px;
+          border: none;
+          border-radius: 0px;
+        }
+        @include small {
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+          gap: 5px;
+        }
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .avatar {
+          img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+        .avatar,
+        .name,
+        .email {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+        }
+        button {
+          width: 100px;
+          background-color: rgb(42, 42, 194);
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+      .listItem,
+      .savedItem {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .myList,
+      .savedList {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+    }
+  }
+  .messageContainer {
+    flex: 1.8;
+    display: flex;
+    flex-direction: column;
+    @include small {
+      flex: none;
+      height: 100%;
+    }
+
+    .message,
+    .user {
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .veiw {
+      padding-left: 20px;
+      width: 100%;
+      flex: 3;
+      height: 30%;
+      .messages {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 100%;
+
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .message {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+    }
+    .chatBox {
+      width: 100%;
+      height: 70%;
+      flex: 1;
+      display: none;
+
+      flex-direction: column;
+      &.showChat {
+        display: flex;
+      }
+      .top {
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px;
+        background-color: #fece51;
+        b {
+          cursor: pointer;
+        }
+        .user {
+          display: flex;
+          align-items: center;
+        }
+      }
+      .center {
+        height: 80%;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 10px;
+        gap: 10px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+        span {
+          background-color: #f9e7bb;
+          width: max-content;
+          font-size: small;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          width: 50%;
+        }
+        .own {
+          margin-left: auto;
+          span {
+            margin-left: auto;
+          }
+        }
+      }
+      .bottom {
+        height: 10%;
+        background-color: #fece51;
+      }
+    }
+  }
+}
