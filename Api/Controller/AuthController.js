@@ -48,7 +48,7 @@ exports.login = async function (req, res) {
 
 
         //CHECK PASSWORD
-        const validPassword = await checkPassword(password, user.password);
+        const validPassword = await checkPassword(user.password,password);
 
         if (!validPassword) {
             return res.status(400).send({
