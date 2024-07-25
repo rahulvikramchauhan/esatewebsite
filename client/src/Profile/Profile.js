@@ -16,9 +16,12 @@ function Profile() {
     console.log("entered into profile")
     useEffect(function () {
         async function fetchPost() {
-            const data = await fetch("http://localhost:8000/api/post")
-            const jsondata = await data.json()
-            setPost(jsondata)
+            const data = await axios.put(`http://localhost:8000/api/post/profile/${currentUser?._id}`,{},{
+                withCredentials:true
+            })
+            // const jsondata = await data.json()
+            console.log( "fetchdata"+data);
+            setPost(data.data);
         }
         fetchPost();
     }, []);
