@@ -4,7 +4,7 @@ const User = require("../Model/UserModel");
 
 exports.getPosts = async function (req, res) {
     try {
-        const post = await Post.find({}).populate("user", "name avatar").populate("postdetail");
+        const post = await Post.find().populate("user", "name avatar").populate("postdetail");
         res.status(200).send({
             message: "success",
             data: post
@@ -18,8 +18,25 @@ exports.getPosts = async function (req, res) {
 }
 exports.getPost = async function (req, res) {
     const { id } = req.params;
+    console.log(id)
     try {
-        const post = await Post.findById({ _id: id }).populate("user", "name avatar").populate("postdetail");
+        const post = await Post.find({ _id: id }).populate("user", "name avatar").populate("postdetail");
+        res.status(200).send({
+            message: "success",
+            data: post
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(400).send({
+            message: "Failed to Get Post"
+        })
+    }
+}
+exports.getProfilePost = async function (req, res) {
+    const { id } = req.params;
+    console.log(id)
+    try {
+        const post = await Post.find({ user: id }).populate("user", "name avatar").populate("postdetail");
         res.status(200).send({
             message: "success",
             data: post
